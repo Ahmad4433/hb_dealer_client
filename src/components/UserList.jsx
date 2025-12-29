@@ -76,9 +76,25 @@ const UserList = () => {
       toast.success(result?.message);
       setShowEdit(false);
       const userIndex = users.findIndex((item) => item._id === user?._id);
-         const coppyUsers = [...users];
+      const coppyUsers = [...users];
       coppyUsers.splice(userIndex, 1, result?.user);
-      setUsers(coppyUsers)
+      setUsers(coppyUsers);
+    }
+  };
+
+  const deleteUserHandler = async (u) => {
+    const data = {
+      url: apis().deleteUser + "?id=" + u?._id,
+      method: "DELETE",
+    };
+
+    const result = await httpAction(data);
+    if (result?.status) {
+      toast.success(result?.message);
+      const findedIndex = users.findIndex((item) => item._id === u?._id);
+      const copyUsers = [...users];
+      copyUsers.splice(findedIndex, 1);
+      setUsers(copyUsers);
     }
   };
 
@@ -263,6 +279,7 @@ const UserList = () => {
                   className="iconBtn delete"
                   title="Delete User"
                   onClick={() => {
+                    deleteUserHandler(u);
                     // TODO: delete confirmation + API
                     console.log("Delete user:", u._id);
                   }}

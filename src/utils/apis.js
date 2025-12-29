@@ -8,7 +8,8 @@ const apis = () => {
     userList: `${live}user/list`,
     invoiceList: `${live}user/invoice/list`,
     getSingleUser:`${live}user/single`,
-    updateUser:`${live}user/update`
+    updateUser:`${live}user/update`,
+    deleteUser:`${live}user/delete`
   };
 
   return list;
