@@ -1,0 +1,317 @@
+.userListPage {
+  padding: 18px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffffff 0%, #f6f8fb 45%, #ffffff 100%);
+}
+
+/* Header */
+.userHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.userTitle {
+  margin: 0;
+  font-size: 22px;
+  color: #111827;
+  letter-spacing: -0.2px;
+}
+
+.userSub {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.userHeaderRight {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.userSearch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  border-radius: 12px;
+  padding: 10px 12px;
+  min-width: 320px;
+  box-shadow: 0 8px 26px rgba(17, 24, 39, 0.06);
+}
+
+.searchIco {
+  color: #6b7280;
+  font-size: 18px;
+}
+
+.userSearch input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  color: #111827;
+  background: transparent;
+}
+
+.refreshBtn {
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  background: #fff;
+  color: #111827;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 8px 26px rgba(17, 24, 39, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.refreshBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.1);
+}
+
+/* Grid */
+.userGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+}
+
+.userCard {
+  grid-column: span 4;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 14px 40px rgba(17, 24, 39, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.userCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 50px rgba(17, 24, 39, 0.12);
+}
+
+.userTop {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(45, 75, 255, 0.1);
+  border: 1px solid rgba(45, 75, 255, 0.18);
+  color: #2d4bff;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.userMeta {
+  width: 100%;
+}
+
+.userNameRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.userName {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.2px;
+}
+
+.invoiceBadge {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: #065f46;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.userId {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Details */
+.userDetails {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(17, 24, 39, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detailRow {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.rowIcon {
+  color: #2d4bff;
+  margin-top: 2px;
+}
+
+.rowText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.label {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.value {
+  font-size: 14px;
+  color: #111827;
+  font-weight: 700;
+}
+
+/* Footer */
+.userFooter {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(17, 24, 39, 0.08);
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.miniBtn {
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  background: #111827;
+  color: #fff;
+  padding: 9px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.miniBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(17, 24, 39, 0.2);
+}
+
+.hint {
+  font-size: 12px;
+  color: #6b7280;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Empty state */
+.emptyState {
+  grid-column: 1 / -1;
+  padding: 30px 0;
+}
+
+.emptyCard {
+  max-width: 520px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  border-radius: 18px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 16px 50px rgba(17, 24, 39, 0.08);
+}
+
+.emptyIcon {
+  font-size: 34px;
+  color: #2d4bff;
+}
+
+/* ===== Card Actions (Edit / Delete) ===== */
+.cardActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 1rem 0;
+}
+
+.iconBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  background: rgba(255, 255, 255, 0.95);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #374151;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+}
+
+.iconBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.15);
+}
+
+/* Edit */
+.iconBtn.edit {
+  color: #2563eb;
+  border-color: rgba(37, 99, 235, 0.35);
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.iconBtn.edit:hover {
+  background: rgba(37, 99, 235, 0.15);
+}
+
+/* Delete */
+.iconBtn.delete {
+  color: #b91c1c;
+  border-color: rgba(185, 28, 28, 0.35);
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.iconBtn.delete:hover {
+  background: rgba(239, 68, 68, 0.18);
+}
+
+@media (max-width: 1200px) {
+  .userCard {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 768px) {
+  .userSearch {
+    min-width: 100%;
+  }
+  .userCard {
+    grid-column: span 12;
+  }
+}

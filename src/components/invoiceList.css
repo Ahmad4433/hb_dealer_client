@@ -1,0 +1,592 @@
+.invoiceList {
+  padding: 18px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffffff 0%, #f6f8fb 45%, #ffffff 100%);
+}
+
+.invoiceHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.headerLeft .titleRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.titleIcon {
+  font-size: 26px;
+  color: #2d4bff;
+}
+
+.title {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -0.2px;
+  color: #111827;
+}
+
+.subtitle {
+  margin: 6px 0 0 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  border-radius: 12px;
+  padding: 10px 12px;
+  min-width: 320px;
+  box-shadow: 0 8px 26px rgba(17, 24, 39, 0.06);
+}
+
+.searchIcon {
+  color: #6b7280;
+  font-size: 18px;
+}
+
+.searchBox input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  color: #111827;
+  background: transparent;
+}
+
+.filterPills {
+  display: flex;
+  gap: 8px;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 26px rgba(17, 24, 39, 0.05);
+}
+
+.pill {
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  background: #fff;
+  color: #111827;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(17, 24, 39, 0.08);
+}
+
+.pill.active {
+  background: #111827;
+  color: #fff;
+  border-color: #111827;
+}
+
+.pill.activeSale {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.35);
+  color: #065f46;
+}
+
+.pill.activePurchase {
+  background: rgba(59, 130, 246, 0.12);
+  border-color: rgba(59, 130, 246, 0.35);
+  color: #1e40af;
+}
+
+.refreshBtn {
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  background: #fff;
+  color: #111827;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 8px 26px rgba(17, 24, 39, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.refreshBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.1);
+}
+
+.invoiceGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+}
+
+.invoiceCard {
+  grid-column: span 4;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 14px 40px rgba(17, 24, 39, 0.08);
+  padding: 14px;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.invoiceCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 50px rgba(17, 24, 39, 0.12);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.badgeWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.9px;
+  padding: 6px 10px;
+  width: fit-content;
+  border-radius: 999px;
+}
+
+.badge.sale {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #065f46;
+}
+
+.badge.purchase {
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  color: #1e40af;
+}
+
+.date {
+  font-size: 12px;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.idRow {
+  font-size: 12px;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px dashed rgba(17, 24, 39, 0.18);
+  background: rgba(17, 24, 39, 0.02);
+}
+
+.totalsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.metric {
+  background: rgba(17, 24, 39, 0.03);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 14px;
+  padding: 10px;
+}
+
+.metricLabel {
+  font-size: 12px;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.metricValue {
+  margin-top: 6px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.2px;
+}
+
+.metric.profit .metricValue {
+  color: #065f46;
+}
+
+.metric.muted .metricValue {
+  color: #9ca3af;
+}
+
+.section {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(17, 24, 39, 0.08);
+}
+
+.sectionTitle {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.infoRow {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.rowIcon {
+  color: #2d4bff;
+  margin-top: 2px;
+}
+
+.rowText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.label {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.value {
+  font-size: 14px;
+  color: #111827;
+  font-weight: 650;
+}
+
+.kvGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.kv {
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 14px;
+  padding: 10px;
+}
+
+.kv.disabled {
+  opacity: 0.55;
+}
+
+.k {
+  font-size: 12px;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.v {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.noteSection .note {
+  margin: 0;
+  background: rgba(45, 75, 255, 0.06);
+  border: 1px solid rgba(45, 75, 255, 0.16);
+  padding: 10px;
+  border-radius: 14px;
+  color: #111827;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(17, 24, 39, 0.08);
+}
+
+.assignedUser {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.chip {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(17, 24, 39, 0.04);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  font-size: 12px;
+  color: #111827;
+  font-weight: 650;
+}
+
+.chip.ghost {
+  background: transparent;
+  color: #374151;
+}
+
+.miniBtn {
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  background: #111827;
+  color: #fff;
+  padding: 9px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.miniBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(17, 24, 39, 0.2);
+}
+
+.emptyState {
+  grid-column: 1 / -1;
+  padding: 30px 0;
+}
+
+.emptyCard {
+  max-width: 520px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  border-radius: 18px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 16px 50px rgba(17, 24, 39, 0.08);
+}
+
+.emptyIcon {
+  font-size: 34px;
+  color: #2d4bff;
+}
+
+/* ===== Top Controls (Date Filter + Summary) ===== */
+.topControls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.dateFilters {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 14px 40px rgba(17, 24, 39, 0.06);
+  display: flex;
+  gap: 10px;
+  align-items: end;
+  flex-wrap: wrap;
+}
+
+.dateField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dateField label {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 700;
+}
+
+.dateField input[type="date"] {
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 13px;
+  background: #fff;
+  color: #111827;
+  outline: none;
+}
+
+.dateError {
+  width: 100%;
+  margin-top: 6px;
+  color: #b91c1c;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+.ghostBtn {
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  background: rgba(17, 24, 39, 0.03);
+  color: #111827;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ghostBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(17, 24, 39, 0.1);
+}
+
+/* ===== Summary Cards ===== */
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.summaryCard {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 14px 40px rgba(17, 24, 39, 0.06);
+}
+
+.sumLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.sumValue {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 900;
+  color: #111827;
+  letter-spacing: -0.3px;
+}
+
+.saleSum {
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.1),
+    rgba(255, 255, 255, 0.9)
+  );
+  border-color: rgba(16, 185, 129, 0.22);
+}
+
+.purchaseSum {
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.1),
+    rgba(255, 255, 255, 0.9)
+  );
+  border-color: rgba(59, 130, 246, 0.22);
+}
+
+.profitSum {
+  background: linear-gradient(
+    135deg,
+    rgba(45, 75, 255, 0.1),
+    rgba(255, 255, 255, 0.9)
+  );
+  border-color: rgba(45, 75, 255, 0.22);
+}
+
+
+.pdfBtn {
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  background: #111827;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pdfBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(17, 24, 39, 0.18);
+}
+
+.pdfBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+
+
+@media (max-width: 1100px) {
+  .topControls {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .summaryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  .invoiceCard {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 768px) {
+  .searchBox {
+    min-width: 100%;
+  }
+  .invoiceCard {
+    grid-column: span 12;
+  }
+  .kvGrid {
+    grid-template-columns: 1fr;
+  }
+}

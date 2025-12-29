@@ -1,0 +1,14 @@
+.user-main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+}
+
+@media (max-width: 756px) {
+  .user-main {
+    width: 100%;
+    top: 40%;
+  }
+}
