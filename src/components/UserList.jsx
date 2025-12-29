@@ -83,6 +83,7 @@ const UserList = () => {
   };
 
   const deleteUserHandler = async (u) => {
+    return
     const data = {
       url: apis().deleteUser + "?id=" + u?._id,
       method: "DELETE",
